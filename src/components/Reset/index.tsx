@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
-import { darken, rgba } from 'polished';
+import { createGlobalStyle } from "styled-components";
+import { darken, rgba } from "polished";
 
-import { COLOR } from '../../constants';
+import { COLOR } from "../../theme/constants";
 
 /* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 const normalize = `

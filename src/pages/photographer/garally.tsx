@@ -1,14 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import Layout from "../../components/Layout";
-
 const GarallyPage = () => (
-  <Layout>
+  <div>
     <h1>This is Garally</h1>
     <p>Welcome to page 2</p>
     <Link to="/">Go back to the homepage</Link>
-  </Layout>
+  </div>
 );
 
 export default GarallyPage;

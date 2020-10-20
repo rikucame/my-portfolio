@@ -1,14 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import Layout from "../../components/Layout";
-
 const ProjectPage = () => (
-  <Layout>
+  <div>
     <h1>This is Project</h1>
     <p>Welcome to page 2</p>
     <Link to="/">Go back to the homepage</Link>
-  </Layout>
+  </div>
 );
 
 export default ProjectPage;
