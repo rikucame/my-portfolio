@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { darken } from 'polished';
+import styled from "styled-components";
+import { darken } from "polished";
 
-import { COLOR } from '../../constants';
+import { COLOR } from "../../../theme/constants";
 
 export const HeaderWrapper = styled.div`
   background-color: ${COLOR.REBECCA_PURPLE};
