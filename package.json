@@ -20,7 +20,7 @@
     "url": "https://github.com/RobertoMSousa/gatsby-typescript-storybook-starter"
   },
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "npm run clean & gatsby develop",
     "start": "concurrently --kill-others \"npm run develop\" \"npm run storybook\"",
     "serve": "gatsby serve",
     "storybook": "start-storybook -p 6006 -c .storybook",
