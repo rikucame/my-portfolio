@@ -1,14 +1,39 @@
 import React from "react";
-import { Top } from "../components/Layout/Top";
-import { TopSection } from "../components/Parts/TopSection";
+import { graphql, Link } from "gatsby";
+import { Layout } from "../components/Modules/Layout";
+import styled from "styled-components";
+import { FrameInPhotosList } from "../components/Parts/FrameInPhotosList";
 
-const TopPage = () => {
+const Index = ({ data }: any) => {
+  console.log(data)
+  const filteredEdges = data.allFile.edges.filter(({ node }: any) => {
+    return node.relativeDirectory.length
+  });
+  const fileNames = filteredEdges.map(({node}: any) => {
+    return node.relativePath
+  })
+  console.log(filteredEdges);
   return (
-    <Top>
-      <TopSection mySide="developer" />
-      <TopSection mySide="photographer" />
-    </Top>
+    <Layout>
+      <h1>I'm Photographer</h1>
+      <p>Welcome to page 2</p>
+      <Link to="/">Go back to the homepage</Link>
+      <FrameInPhotosList fileNames={fileNames} />
+    </Layout>
   );
 };
 
-export default TopPage;
+export const query = graphql`
+  query {
+    allFile {
+      edges {
+        node {
+          relativeDirectory
+          relativePath
+        }
+      }
+    }
+  }
+`
+
+export default Index;
