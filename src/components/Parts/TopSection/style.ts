@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NameText } from "../NameText";
+import { NameText } from "../LinkText";
 import { COLOR } from "../../../theme/constants";
 import media from "styled-media-query";
 

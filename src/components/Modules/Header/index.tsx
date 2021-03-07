@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -32,3 +33,24 @@ Header.defaultProps = {
 };
 
 export default Header;
+=======
+import React, { useState } from "react";
+import { GlobalNavigation } from "../../Parts/GlobalNavigation";
+
+import { StyledHeader, BackHome, } from "./style";
+
+type Props = {
+  className? : string;
+};
+
+export const Header: React.FC<Props> = ({ className }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <StyledHeader className={className} isOpen={isOpen}>
+      <p onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Close' : 'Menu'}</p>
+      <GlobalNavigation isDisplay={isOpen} />
+      <BackHome to="/" label={"Rikkun"} />
+    </StyledHeader>
+  );
+};
+>>>>>>> Stashed changes
