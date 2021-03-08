@@ -1,27 +1,45 @@
 import React from "react";
-import { Link } from "gatsby";
+import { graphql, Link } from "gatsby";
+import { Layout } from "../components/Modules/Layout";
+import { FrameInPhotosList } from "../components/Parts/FrameInPhotosList";
 
-import Layout from "../components/Layout";
-import Image from "./image";
+type Props = {
+  data: {
+    allFile: {
+      edges: {
+        node: {
+          relativePath: string;
+        };
+      }[];
+    };
+  };
+};
 
-const IndexPage = () => (
-  <Layout>
-    <h1>Hi there!</h1>
-    <p>
-      <strong>Thanks for using awesome-gatsby-starter!</strong> Remember to{" "}
-      <a href="https://github.com/RobertoMSousa/gatsby-typescript-storybook-starter">
-        drop a ⭐ on the project
-      </a>{" "}
-      if you find it useful.
-    </p>
-    <div style={{ maxWidth: "300px", marginBottom: "1.45rem" }}>
-      <Image />
-    </div>
-    <Link to="/developer">Go to developer</Link>
-    <Link to="/developer/project">Go to project</Link>
-    <Link to="/photographer">Go to photographer</Link>
-    <Link to="/photographer/garally">Go to garally</Link>
-  </Layout>
-);
+const Index: React.FC<Props> = ({ data }) => {
+  
+  const fileNames = data.allFile.edges.map(({node}) => {
+    return node.relativePath;
+  });
+  return (
+    <Layout>
+      <h1>I'm Photographer</h1>
+      <p>Welcome to page 2</p>
+      <Link to="/">Go back to the homepage</Link>
+      <FrameInPhotosList fileNames={fileNames} />
+    </Layout>
+  );
+};
 
-export default IndexPage;
+export const query = graphql`
+  query {
+    allFile(filter: {relativeDirectory: {ne: ""}}, sort: {fields: relativePath, order: ASC}) {
+      edges {
+        node {
+          relativePath
+        }
+      }
+    }
+  }
+`
+
+export default Index;

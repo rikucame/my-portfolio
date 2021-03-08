@@ -20,7 +20,7 @@
     "url": "https://github.com/RobertoMSousa/gatsby-typescript-storybook-starter"
   },
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "npm run clean & gatsby develop",
     "start": "concurrently --kill-others \"npm run develop\" \"npm run storybook\"",
     "serve": "gatsby serve",
     "storybook": "start-storybook -p 6006 -c .storybook",
@@ -52,7 +52,8 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
-    "styled-components": "^4.2.1"
+    "styled-components": "^4.2.1",
+    "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
