@@ -1,19 +1,30 @@
 import { graphql } from "gatsby";
 import React from "react"
+import { Layout } from "../components/Modules/Layout";
 import { FrameInPhotosList } from "../components/Parts/FrameInPhotosList";
 
-const FilteredPhotos: React.FC = ({data}) => {
-  const { edges } = data.allFile;
-  console.log(edges);
-  const fileNames = edges.map(({node}: any) => {
+type Props = {
+  data: {
+    allFile: {
+      edges: {
+        node: {
+          relativePath: string;
+        };
+      }[];
+    };
+  };
+};
+
+const FilteredPhotos: React.FC<Props> = ({data}) => {
+  const fileNames = data.allFile.edges.map(({node}) => {
     return node.relativePath
   })
   console.log(fileNames);
   return (
-    <div>
+    <Layout>
       <p>photos</p>
       <FrameInPhotosList fileNames={fileNames} />
-    </div>
+    </Layout>
   )
 }
 

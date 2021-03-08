@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 import { COLOR } from "../../../theme/constants";
 import { customMedia } from "../../../theme/customMedia";
-import { LinkText as defaultLinkText } from "../../Parts/LinkText";
+import { LinkText } from "../../Parts/LinkText";
+import { StyledLink } from "../../Parts/LinkText/style";
 
 export const StyledHeader = styled.header<{isOpen: boolean}>`
   width: 100%;
@@ -23,28 +24,8 @@ export const StyledHeader = styled.header<{isOpen: boolean}>`
   `}
 `;
 
-export const BackHome = styled(defaultLinkText)`
+export const BackHome = styled(LinkText)`
   margin: 0;
 `;
 
-export const Navigation = styled.nav`
-  display: flex;
-  flex-flow: nowrap row;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 30px 0 20px;
-  margin-left: 20px;
-`;
-
-export const LinkList = styled.ul``;
-
-export const LinkItem = styled.li`
-  display: block;
-  margin: 7px 0;
-`;
-
-export const NameText = styled(defaultLinkText)``;
-
-export const LinkText = styled(defaultLinkText)`
-  padding: 3px;
-`;
+export const MenuButton = StyledLink.withComponent('p');

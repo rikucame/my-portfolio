@@ -9,9 +9,11 @@ export const StyledLayout = styled.div`
   `};
 `;
 
-export const ChildrenWrap = styled.div`
+export const Main = styled.main`
   margin: 50px 40px 0;
 `;
+
+export const CurentPage = styled.h1``;
 
 export const PhotoGrapherStyle = createGlobalStyle`
   html {

@@ -7,20 +7,17 @@ export const COLOR = {
   WHITE: "#FCFCFC",
 };
 
-<<<<<<< Updated upstream
-export const NAV_ITEMS = [
-  { to: "/", label: "Index" },
-  { to: "/page-2", label: "Page 2" },
-  { to: "/mdx-example", label: "Markdown Example" },
-  { href: "/docs/", label: "Storybook" },
-=======
-export const PHOTOGRAPHER_NAV_ITEMS: NavItemType[] = [
+export const PHOTOGRAPHER_NAV_ITEMS = [
   { path: "/portrait", label: "Portrait" },
   { path: "/snap", label: "Snap" },
   { path: "/about", label: "About" },
   { path: "/contact", label: "Contact" },
->>>>>>> Stashed changes
 ];
 
 export const SP = "@media screen and (max-width: 1024px)";
 
+export const rewritePathToLabel = (text: string) => {
+  const label = text.slice(1).replace('/', '')
+  const firstCharUpperCaselabel = label.charAt(0).toUpperCase() + label.slice(1);
+  return firstCharUpperCaselabel;
+}

@@ -1,18 +1,25 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import { Layout } from "../components/Modules/Layout";
-import styled from "styled-components";
 import { FrameInPhotosList } from "../components/Parts/FrameInPhotosList";
 
-const Index = ({ data }: any) => {
-  console.log(data)
-  const filteredEdges = data.allFile.edges.filter(({ node }: any) => {
-    return node.relativeDirectory.length
+type Props = {
+  data: {
+    allFile: {
+      edges: {
+        node: {
+          relativePath: string;
+        };
+      }[];
+    };
+  };
+};
+
+const Index: React.FC<Props> = ({ data }) => {
+  
+  const fileNames = data.allFile.edges.map(({node}) => {
+    return node.relativePath;
   });
-  const fileNames = filteredEdges.map(({node}: any) => {
-    return node.relativePath
-  })
-  console.log(filteredEdges);
   return (
     <Layout>
       <h1>I'm Photographer</h1>
@@ -25,10 +32,9 @@ const Index = ({ data }: any) => {
 
 export const query = graphql`
   query {
-    allFile {
+    allFile(filter: {relativeDirectory: {ne: ""}}, sort: {fields: relativePath, order: ASC}) {
       edges {
         node {
-          relativeDirectory
           relativePath
         }
       }

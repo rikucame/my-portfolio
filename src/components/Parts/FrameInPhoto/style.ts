@@ -3,6 +3,7 @@ import { Image } from "../Image";
 
 export const PhotoFrame = styled.div<{bgImage: string}>`
   width: 70%;
+  background-color: #f1f1f1;
   background-image: url(${({bgImage}) => bgImage});
   border: solid 8px #0b0b0b;
   position: relative;
