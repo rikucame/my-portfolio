@@ -15,9 +15,9 @@ type Props = {
 export const Layout: React.FC<Props> = ({ children }) => {
   const [currentPage, setCurrentPage] = useState('/')
   useEffect(() => {
-  const currentPageText = currentPage.length > 1 ? rewritePathToLabel(currentPage) : 'All Photos';
+  const currentPageText = location.pathname !== '/' ? rewritePathToLabel(location.pathname) : 'All Photos';
   setCurrentPage(currentPageText);
-  })
+  }, []);
   return (
     <StyledLayout>
       <GlobalStyle />
