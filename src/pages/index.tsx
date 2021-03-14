@@ -22,9 +22,6 @@ const Index: React.FC<Props> = ({ data }) => {
   });
   return (
     <Layout>
-      <h1>I'm Photographer</h1>
-      <p>Welcome to page 2</p>
-      <Link to="/">Go back to the homepage</Link>
       <FrameInPhotosList fileNames={fileNames} />
     </Layout>
   );

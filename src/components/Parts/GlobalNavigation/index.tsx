@@ -4,10 +4,11 @@ import {
   Navigation,
   LinkList,
   LinkItem,
+  BorderLinkItem,
   LinkText,
 } from "./style";
-import { rewritePathToLabel } from "../../../theme/constants";
 import { graphql, useStaticQuery } from "gatsby";
+import { transformPagePathToLabel } from "../../../theme/constants";
 
 type Props = {
   isDisplay: boolean;
@@ -33,21 +34,25 @@ export const GlobalNavigation: React.FC<Props> = ({ isDisplay }) => {
       }
     `
   );
-  console.log(allSitePage)
   const NavItems = allSitePage.nodes.flatMap(({ path }) => {
     return !path.includes('404') ? path : [];
   });
   return (
     <Navigation isDisplay={isDisplay}>
       <LinkList isDisplay={isDisplay}>
-        {NavItems.map((item) => {
-          const path = item;
-          const label = rewritePathToLabel(item);
-          console.log(label)
+        {NavItems.map((path) => {
+          const label = transformPagePathToLabel(path);
+          console.log(label === 'About');
           return (
-            <LinkItem>
-              <LinkText to={path} label={label} />
-            </LinkItem>
+            label === 'About' ? (
+              <BorderLinkItem>
+              <LinkText key={label} to={path} label={label} isDisplay={isDisplay} />
+            </BorderLinkItem>
+            ) : (
+              <LinkItem border={label === 'About'}>
+                <LinkText key={label} to={path} label={label} isDisplay={isDisplay} />
+              </LinkItem>
+            )
           );
         })}
       </LinkList>
