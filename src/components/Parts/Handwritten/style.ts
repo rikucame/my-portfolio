@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 import { customMedia } from '../../../theme/customMedia';
-import { Link } from 'gatsby';
-import { COLOR } from '../../../theme/constants';
 
-export const StyledLink = styled(Link)`
+export const StyledHandWritten = styled.p`
   @import url('../../../theme/fonts/851MkPOP.ttf');
-  font-size: 16px;
+  font-family: '851MkPOP';
+  font-size: 10px;
+  color: #777;
   font-weight: bold;
   letter-spacing: 0.11rem;
-  color: ${COLOR.BLACK};
   ${customMedia.greaterThan('desktop')`
-    font-size: 18px;
   `}
 `;

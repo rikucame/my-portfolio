@@ -23,7 +23,8 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
   result.data.allDirectory.edges.forEach(({ node }) => {
     console.log(`dir: ${node.relativeDirectory}`)
-    const slug = node.relativePath.split('/').slice(-1)[0];
+    const directlyName = node.relativePath.split('/').slice(-1)[0];
+    const slug = directlyName.split('-')[1]
     console.log(slug);
     if(node.relativeDirectory === 'photos') {
       createPage({

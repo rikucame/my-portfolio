@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import { StyledLayout, PhotoGrapherStyle, Main, CurentPage } from "./style";
 import { GlobalStyle } from "../../../theme/globbalStyle";
 import { Header } from "../Header";
-import { rewritePathToLabel } from "../../../theme/constants";
+import { transformPagePathToLabel } from "../../../theme/constants";
 
 type Props = {
   meta?:{
@@ -13,10 +13,10 @@ type Props = {
 }
 
 export const Layout: React.FC<Props> = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState('/')
+  const [currentPage, setCurrentPage] = useState('')
   useEffect(() => {
-  const currentPageText = location.pathname !== '/' ? rewritePathToLabel(location.pathname) : 'All Photos';
-  setCurrentPage(currentPageText);
+    const currentPageText = location.pathname !== '/' ? transformPagePathToLabel(location.pathname) : 'All Photos';
+    setCurrentPage(currentPageText);
   }, []);
   return (
     <StyledLayout>

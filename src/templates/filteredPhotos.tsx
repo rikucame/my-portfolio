@@ -22,7 +22,6 @@ const FilteredPhotos: React.FC<Props> = ({data}) => {
   console.log(fileNames);
   return (
     <Layout>
-      <p>photos</p>
       <FrameInPhotosList fileNames={fileNames} />
     </Layout>
   )
