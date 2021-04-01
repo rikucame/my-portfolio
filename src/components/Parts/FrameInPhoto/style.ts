@@ -28,11 +28,11 @@ export const PhotoFrame = styled.div<{ bgImage: string }>`
     padding-bottom: 100%;
   }
   &::after {
-    width: calc(100% + 13px);
-    height: calc(100% + 13px);
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
     content: '';
     display: block;
-    filter: blur(2px);
+    filter: blur(3px);
     position: absolute;
     top: 0px;
     left: 0px;

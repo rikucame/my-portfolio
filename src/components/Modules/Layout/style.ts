@@ -17,7 +17,12 @@ export const Main = styled.main`
   `}
 `;
 
-export const CurentPage = styled.h1``;
+export const CurentPage = styled.h1`
+  @import url('../../../theme/fonts/851MkPOP.ttf');
+  font-family: '851MkPOP';
+  margin-bottom: 30px;
+  text-align: center;
+`;
 
 export const PhotoGrapherStyle = createGlobalStyle`
   html {

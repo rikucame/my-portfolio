@@ -42,19 +42,19 @@ export const LinkItem = styled.li`
   `}
 `;
 
-export const BorderLinkItem = styled(LinkItem)`
+export const BorderLinkItem = styled.li`
   display: block;
-  padding-top: 14px;
+  padding: 14px 0 6px;
   border-top: 2px solid #888;
   margin-top: 9px;
   ${customMedia.greaterThan('desktop')`
-    padding-top: 17px;
+    padding: 17px 0 8px;
   `}
 `;
 
 export const LinkText = styled(defaultLinkText)<{ isDisplay: boolean }>`
   display: flex;
-  padding: 3px;
+  padding: 3px 8px;
   pointer-events: ${({ isDisplay }) => (isDisplay ? 'auto' : 'none')};
   ${customMedia.greaterThan('desktop')`
     pointer-events: auto;

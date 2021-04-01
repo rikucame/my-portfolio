@@ -32,7 +32,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
       </Helmet>
       <Header />
       <Main>
-        <CurentPage>{currentPage}</CurentPage>
+        <CurentPage>- {currentPage} -</CurentPage>
         {children}
       </Main>
     </StyledLayout>

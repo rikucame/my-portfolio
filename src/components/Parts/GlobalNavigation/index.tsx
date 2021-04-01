@@ -49,7 +49,7 @@ export const GlobalNavigation: React.FC<Props> = ({ isDisplay }) => {
               <LinkText key={label} to={path} label={label} isDisplay={isDisplay} />
             </BorderLinkItem>
             ) : (
-              <LinkItem border={label === 'About'}>
+              <LinkItem>
                 <LinkText key={label} to={path} label={label} isDisplay={isDisplay} />
               </LinkItem>
             )

@@ -1,12 +1,11 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
 import { Layout } from "../components/Modules/Layout";
-import { FrameInPhotosList } from "../components/Parts/FrameInPhotosList";
+import { AboutContent } from "../components/Modules/AboutContent";
 
 const About: React.FC = () => {
   return (
     <Layout>
-      <h1>about</h1>
+      <AboutContent />
     </Layout>
   );
 };

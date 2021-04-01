@@ -29,7 +29,7 @@ export const Photo:React.FC<Props> = ({ className, directory, alt }) => (
       }
     `}
     render={(data) => {
-      const image = data.images.edges.find((n: { node: { relativeDirectory: string; }; }) => n.node.relativeDirectory.indexOf(directory) >= 0);
+      const image = data.images.edges.find((n: { node: { relativeDirectory: string; }; }) => n.node.relativeDirectory.includes(directory));
       if (!image) return null;
       const imageFluid = image.node.childImageSharp.fluid;
       const { aspectRatio } = imageFluid
