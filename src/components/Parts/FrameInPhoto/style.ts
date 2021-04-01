@@ -38,8 +38,7 @@ export const PhotoFrame = styled.div<{ bgImage: string }>`
     left: 0px;
     z-index: -10;
     background: linear-gradient(225deg, transparent 4px, #535353 4px),
-      linear-gradient(135deg, transparent 10px, #535353 10px),
-      linear-gradient(45deg, transparent 4px, #535353 4px),
+      linear-gradient(135deg, transparent 10px, #535353 10px), linear-gradient(45deg, transparent 4px, #535353 4px),
       linear-gradient(315deg, transparent 0px, #535353 0px);
     background-position: top right, top left, bottom left, bottom right;
     background-size: 50% 50%;

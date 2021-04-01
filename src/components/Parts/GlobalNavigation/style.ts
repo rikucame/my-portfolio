@@ -1,10 +1,8 @@
 import styled from 'styled-components';
-
-import { COLOR } from '../../../theme/constants';
 import { customMedia } from '../../../theme/customMedia';
-import { LinkText as defaultLinkText } from '../../Parts/LinkText';
+import { LinkText } from '../../Parts/LinkText';
 
-export const BackHome = styled(defaultLinkText)`
+export const BackHome = styled(LinkText)`
   margin: 0;
 `;
 
@@ -52,7 +50,7 @@ export const BorderLinkItem = styled.li`
   `}
 `;
 
-export const LinkText = styled(defaultLinkText)<{ isDisplay: boolean }>`
+export const StyledLinkText = styled(LinkText)<{ isDisplay: boolean }>`
   display: flex;
   padding: 3px 8px;
   pointer-events: ${({ isDisplay }) => (isDisplay ? 'auto' : 'none')};

@@ -1,5 +1,5 @@
-import React from "react";
-import { DescriptionColumn, Icon, IconsWrap, ProfileColumn, Row, SnsWrap, StyledCaption, Text } from "./style";
+import React from 'react';
+import { DescriptionColumn, Icon, ProfileColumn, Row, SnsWrap, StyledCaption, Text } from './style';
 
 export const AboutContent: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ export const AboutContent: React.FC = () => {
         </DescriptionColumn>
       </Row>
       <Row>
-      <ProfileColumn>
+        <ProfileColumn>
           <Text>Rikuto Ishikura</Text>
           <Text>Photographer | Web Enginier</Text>
           <Text>March 18 1998</Text>
@@ -25,13 +25,13 @@ export const AboutContent: React.FC = () => {
         <DescriptionColumn>
           <Text>Like a leave the past behind</Text>
           <Text>Like a feel the future</Text>
-          <Text>Photograph the world in an "Ambiguous" way.</Text>
+          <Text>Photograph the world in an &quot;Ambiguous&quot; way.</Text>
         </DescriptionColumn>
       </Row>
       <SnsWrap>
-        <Icon fileName={"instagram.svg"} />
-        <Icon fileName={"twitter.svg"} />
-        <Icon fileName={"github.svg"} />
+        <Icon fileName={'instagram.svg'} />
+        <Icon fileName={'twitter.svg'} />
+        <Icon fileName={'github.svg'} />
       </SnsWrap>
     </StyledCaption>
   );

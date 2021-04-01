@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-
 import { COLOR } from '../../../theme/constants';
 import { customMedia } from '../../../theme/customMedia';
 import { LinkText } from '../../Parts/LinkText';
-import { StyledLink } from '../../Parts/LinkText/style';
 
 export const StyledHeader = styled.header<{ isOpen: boolean }>`
   width: 100%;
