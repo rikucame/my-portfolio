@@ -1,5 +1,5 @@
-import React from "react";
-import { StyledHandWritten } from "./style";
+import React from 'react';
+import { StyledHandWritten } from './style';
 
 export type props = {
   className?: string;

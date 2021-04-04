@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { GlobalNavigation } from "../../Parts/GlobalNavigation";
+import React, { useState } from 'react';
+import { GlobalNavigation } from '../../Parts/GlobalNavigation';
 
-import { StyledHeader, BackHome, MenuButton } from "./style";
+import { StyledHeader, BackHome, MenuButton } from './style';
 
 type Props = {
-  className? : string;
+  className?: string;
 };
 
 export const Header: React.FC<Props> = ({ className }) => {
@@ -13,7 +13,7 @@ export const Header: React.FC<Props> = ({ className }) => {
     <StyledHeader className={className} isOpen={isOpen}>
       <MenuButton onClick={() => setIsOpen(!isOpen)}>{isOpen ? 'Close' : 'Menu'}</MenuButton>
       <GlobalNavigation isDisplay={isOpen} />
-      <BackHome to="/" label={"Rikkun"} />
+      <BackHome to="/" label={'Rikkun'} />
     </StyledHeader>
   );
 };

@@ -28,18 +28,17 @@ export const PhotoFrame = styled.div<{ bgImage: string }>`
     padding-bottom: 100%;
   }
   &::after {
-    width: calc(100% + 13px);
-    height: calc(100% + 13px);
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
     content: '';
     display: block;
-    filter: blur(2px);
+    filter: blur(3px);
     position: absolute;
     top: 0px;
     left: 0px;
     z-index: -10;
     background: linear-gradient(225deg, transparent 4px, #535353 4px),
-      linear-gradient(135deg, transparent 10px, #535353 10px),
-      linear-gradient(45deg, transparent 4px, #535353 4px),
+      linear-gradient(135deg, transparent 10px, #535353 10px), linear-gradient(45deg, transparent 4px, #535353 4px),
       linear-gradient(315deg, transparent 0px, #535353 0px);
     background-position: top right, top left, bottom left, bottom right;
     background-size: 50% 50%;

@@ -1,14 +1,7 @@
-import React, { useState } from "react";
-
-import {
-  Navigation,
-  LinkList,
-  LinkItem,
-  BorderLinkItem,
-  LinkText,
-} from "./style";
-import { graphql, useStaticQuery } from "gatsby";
-import { transformPagePathToLabel } from "../../../theme/constants";
+import React from 'react';
+import { Navigation, LinkList, LinkItem, BorderLinkItem, StyledLinkText } from './style';
+import { graphql, useStaticQuery } from 'gatsby';
+import { transformPagePathToLabel } from '../../../theme/constants';
 
 type Props = {
   isDisplay: boolean;
@@ -26,7 +19,7 @@ export const GlobalNavigation: React.FC<Props> = ({ isDisplay }) => {
   const { allSitePage }: QueryProps = useStaticQuery(
     graphql`
       query GrobalNavigationItems {
-        allSitePage(filter: {path: {ne: "/"}}) {
+        allSitePage(filter: { path: { ne: "/" } }) {
           nodes {
             path
           }
@@ -40,19 +33,17 @@ export const GlobalNavigation: React.FC<Props> = ({ isDisplay }) => {
   return (
     <Navigation isDisplay={isDisplay}>
       <LinkList isDisplay={isDisplay}>
-        {NavItems.map((path) => {
+        {NavItems.map(path => {
           const label = transformPagePathToLabel(path);
           console.log(label === 'About');
-          return (
-            label === 'About' ? (
-              <BorderLinkItem>
-              <LinkText key={label} to={path} label={label} isDisplay={isDisplay} />
+          return label === 'About' ? (
+            <BorderLinkItem>
+              <StyledLinkText key={label} to={path} label={label} isDisplay={isDisplay} />
             </BorderLinkItem>
-            ) : (
-              <LinkItem border={label === 'About'}>
-                <LinkText key={label} to={path} label={label} isDisplay={isDisplay} />
-              </LinkItem>
-            )
+          ) : (
+            <LinkItem>
+              <StyledLinkText key={label} to={path} label={label} isDisplay={isDisplay} />
+            </LinkItem>
           );
         })}
       </LinkList>

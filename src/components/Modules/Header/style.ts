@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-
 import { COLOR } from '../../../theme/constants';
 import { customMedia } from '../../../theme/customMedia';
 import { LinkText } from '../../Parts/LinkText';
-import { StyledLink } from '../../Parts/LinkText/style';
 
 export const StyledHeader = styled.header<{ isOpen: boolean }>`
   width: 100%;
@@ -20,6 +18,7 @@ export const StyledHeader = styled.header<{ isOpen: boolean }>`
   ${customMedia.greaterThan('desktop')`
     width: 200px;
     height: 100%;
+    padding: 50px 20px 3f0px;
     flex-direction: column;
     border-right: 1px solid ${COLOR.BLACK};
   `}

@@ -19,14 +19,12 @@ export const transformPagePathToLabel = (text: string) => {
   const label = text.slice(1).replace('/', '');
   if (label.includes('_')) {
     const wordsArray = label.split('_').map(word => {
-      const firstCharUpperCaseWord =
-        word.charAt(0).toUpperCase() + word.slice(1);
+      const firstCharUpperCaseWord = word.charAt(0).toUpperCase() + word.slice(1);
       return firstCharUpperCaseWord;
     });
     return wordsArray.join(' ');
   } else {
-    const firstCharUpperCaselabel =
-      label.charAt(0).toUpperCase() + label.slice(1);
+    const firstCharUpperCaselabel = label.charAt(0).toUpperCase() + label.slice(1);
     const removeUnderBar = firstCharUpperCaselabel.replace('_', ' ');
     return removeUnderBar;
   }

@@ -1,5 +1,5 @@
-import React from "react";
-import { StyledLink } from "./style";
+import React from 'react';
+import { StyledLink } from './style';
 
 export type props = {
   to: string;
@@ -9,10 +9,7 @@ export type props = {
 
 export const LinkText: React.FC<props> = ({ className, to, label }) => {
   return (
-    <StyledLink
-      className={className}
-      to={to}
-    >
+    <StyledLink className={className} to={to}>
       {label}
     </StyledLink>
   );
