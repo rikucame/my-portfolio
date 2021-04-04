@@ -1,10 +1,20 @@
 import React from 'react';
-import { DescriptionColumn, Icon, ProfileColumn, Row, SnsWrap, StyledCaption, Text } from './style';
+import {
+  DescriptionColumn,
+  English,
+  Icon,
+  Japanese,
+  ProfileColumn,
+  SnsLink,
+  SnsWrap,
+  StyledCaption,
+  Text,
+} from './style';
 
 export const AboutContent: React.FC = () => {
   return (
     <StyledCaption>
-      <Row>
+      <Japanese>
         <ProfileColumn>
           <Text>石倉陸人</Text>
           <Text>写真家 | Webエンジニア</Text>
@@ -15,8 +25,8 @@ export const AboutContent: React.FC = () => {
           <Text>未来を想うように</Text>
           <Text>世界を「あいまい」に写す</Text>
         </DescriptionColumn>
-      </Row>
-      <Row>
+      </Japanese>
+      <English>
         <ProfileColumn>
           <Text>Rikuto Ishikura</Text>
           <Text>Photographer | Web Enginier</Text>
@@ -27,11 +37,17 @@ export const AboutContent: React.FC = () => {
           <Text>Like a feel the future</Text>
           <Text>Photograph the world in an &quot;Ambiguous&quot; way.</Text>
         </DescriptionColumn>
-      </Row>
+      </English>
       <SnsWrap>
-        <Icon fileName={'instagram.svg'} />
-        <Icon fileName={'twitter.svg'} />
-        <Icon fileName={'github.svg'} />
+        <SnsLink href="https://www.instagram.com/rikton_0318/" target="_blank" rel="noopener">
+          <Icon fileName={'instagram.svg'} />
+        </SnsLink>
+        <SnsLink href="https://twitter.com/rikton_0318" target="_blank" rel="noopener">
+          <Icon fileName={'twitter.svg'} />
+        </SnsLink>
+        <SnsLink href="https://github.com/rikucame" target="_blank" rel="noopener">
+          <Icon fileName={'github.svg'} />
+        </SnsLink>
       </SnsWrap>
     </StyledCaption>
   );

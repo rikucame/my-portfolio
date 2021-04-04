@@ -18,6 +18,7 @@ export const StyledHeader = styled.header<{ isOpen: boolean }>`
   ${customMedia.greaterThan('desktop')`
     width: 200px;
     height: 100%;
+    padding: 50px 20px 3f0px;
     flex-direction: column;
     border-right: 1px solid ${COLOR.BLACK};
   `}

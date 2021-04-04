@@ -18,7 +18,6 @@ export const Navigation = styled.nav<{ isDisplay: boolean }>`
   ${customMedia.greaterThan('desktop')`
     max-height: auto;
     margin-left: 0;
-    margin-top: 70px;
     padding: ({ isDisplay }) => (isDisplay ? '0' : '0');
   `}
 `;

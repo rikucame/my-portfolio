@@ -11,9 +11,12 @@ export const StyledLayout = styled.div`
 `;
 
 export const Main = styled.main`
-  margin: 50px 40px 0;
+  margin: 70px 20px 0;
+  ${customMedia.greaterThan('tablet')`
+    margin: 70px 40px 0;
+  `}
   ${customMedia.greaterThan('desktop')`
-    margin-left: 240px;
+    margin: 40px 50px 0 250px;
   `}
 `;
 
